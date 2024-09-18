@@ -100,7 +100,7 @@ function Column({ title, column, headingColor, cards, setCards }) {
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-          className={`h-full w-full rounded transition-colors ${active ? "bg-neutral-800/50" : "bg-neutral-800/0"}`}
+          className={`h-full w-full rounded transition-colors ${active ? "bg-cardBackground/80" : "bg-neutral-800/0"}`}
         >
           {filteredCards.map((card) => {
             return (

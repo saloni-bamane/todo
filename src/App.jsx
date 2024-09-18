@@ -1,9 +1,11 @@
 import React from "react";
 import Board from "./components/Board";
+import Theme from "./components/Theme";
 
 function App() {
   return (
-    <div className="h-screen w-full bg-neutral-900 text-white">
+    <div className="bg-background text-textPrimary h-screen w-full">
+      <Theme />
       <Board />
     </div>
   );

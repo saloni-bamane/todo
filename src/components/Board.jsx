@@ -4,40 +4,41 @@ import DeleteCard from "./DeleteCard";
 
 function Board() {
   const [cards, setCards] = useState(DEFAULT_CARDS);
+
+  const columnData = [
+    {
+      title: "Backlog",
+      column: "backlog",
+      headingColor: "text-nuetral-500",
+      id: "1",
+    },
+    { title: "TODO", column: "todo", headingColor: "text-yellow-200", id: "2" },
+    {
+      title: "In Progress",
+      column: "doing",
+      headingColor: "text-blue-200",
+      id: "3",
+    },
+    {
+      title: "Complete",
+      column: "done",
+      headingColor: "text-emerald-200",
+      id: "4",
+    },
+  ];
   return (
     <>
-      <div className="flex h-full w-full gap-3 overflow-scroll p-12">
-        <Column
-          title="Backlog"
-          column="backlog"
-          headingColor="text-nuetral-500"
-          cards={cards}
-          setCards={setCards}
-        ></Column>
-
-        <Column
-          title="TODO"
-          column="todo"
-          headingColor="text-yellow-200"
-          cards={cards}
-          setCards={setCards}
-        />
-
-        <Column
-          title="In Progress"
-          column="doing"
-          headingColor="text-blue-200"
-          cards={cards}
-          setCards={setCards}
-        />
-
-        <Column
-          title="Complete"
-          column="done"
-          headingColor="text-emerald-200"
-          cards={cards}
-          setCards={setCards}
-        />
+      <div className="flex h-full w-full gap-3 overflow-y-auto p-12">
+        {columnData.map((column) => (
+          <Column
+            title={column.title}
+            column={column.column}
+            headingColor={column.headingColor}
+            cards={cards}
+            setCards={setCards}
+            key={column.id}
+          />
+        ))}
         <DeleteCard setCards={setCards} />
       </div>
     </>

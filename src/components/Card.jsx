@@ -10,9 +10,9 @@ function Card({ title, id, column, handleDragStart }) {
         layoutId={id}
         draggable
         onDragStart={(e) => handleDragStart(e, { title, id, column })}
-        className="cursor-grab rounded border border-neutral-700 bg-neutral-800 p-3 active:cursor-grabbing"
+        className="bg-cardBackground border-borderColor cursor-grab rounded border p-3 active:cursor-grabbing"
       >
-        <p className="text-sm text-neutral-100">{title}</p>
+        <p className="text-textPrimary text-sm">{title}</p>
       </motion.div>
     </>
   );
